@@ -11,10 +11,10 @@ const Router = () => {
         <Routes>
           <Route path="/logged" />
           <Route path="/:user/edit" />
-          <Route path="/create1" />
-          <Route path="/create2" />
-          <Route path="/create3" />
-          <Route path="/create4" />
+          <Route path="/templates/create/1" />
+          <Route path="/templates/create/2" />
+          <Route path="/templates/create/3" />
+          <Route path="/templates/create/4" />
           <Route path="/*" />
         </Routes>
       ) : (
