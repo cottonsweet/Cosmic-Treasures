@@ -141,4 +141,7 @@ hs_err_pid*
 replay_pid*
 
 .jpb
+
+*.application.properties
+
 # End of https://www.toptal.com/developers/gitignore/api/intellij,java
