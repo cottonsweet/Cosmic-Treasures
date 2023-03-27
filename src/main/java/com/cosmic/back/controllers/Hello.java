@@ -13,6 +13,6 @@ public class Hello {
     @Operation(summary = "bear eat method", description = "bear eat method description", tags = { "contact" })
     @GetMapping("/test")
     public String test(){
-        return "Hello by controller";
+        return "Hello by controller hehe";
     }
 }

@@ -55,4 +55,5 @@ replay_pid*
 build
 
 # application.properties #
-.config/
+.config/*
+application.properties
