@@ -140,8 +140,10 @@ fabric.properties
 hs_err_pid*
 replay_pid*
 
+.gradle
 .jpb
 
-*.application.properties
+build
+.src/main/resources/application.properties
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij,java
