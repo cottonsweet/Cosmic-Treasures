@@ -1,6 +1,6 @@
 package com.cosmic.back.Entities;
 
-import com.sun.istack.NotNull;
+import javax.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -22,6 +22,7 @@ public class Capsule {
     @NotNull
     @Column(name="title",length = 50)
     private String title;
+
     @NotNull
     @Column(name="content")
     private String content;

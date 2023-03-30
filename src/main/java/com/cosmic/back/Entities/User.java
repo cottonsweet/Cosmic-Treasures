@@ -6,7 +6,7 @@ import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
-import com.sun.istack.NotNull;
+import javax.validation.constraints.NotNull;
 
 import java.util.Date;
 import java.util.Set;
@@ -22,12 +22,15 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
+
     @NotNull
     @Column(name = "login_id", length = 40)
     private String loginId;
+
     @NotNull
     @Column(name = "password", length=200)
     private String password;
+
     @NotNull
     @Column(name = "nickname", length=30)
     private String nickname;
