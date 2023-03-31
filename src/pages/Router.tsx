@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
-import { useState } from "react";
+// Components
+import ViewController from "./View/ViewController";
+
 
 const Router = () => {
   // 이 state에 백으로 받는 토큰값 전송해야함
@@ -11,10 +14,7 @@ const Router = () => {
         <Routes>
           <Route path="/logged" />
           <Route path="/:user/edit" />
-          <Route path="/templates/create/1" />
-          <Route path="/templates/create/2" />
-          <Route path="/templates/create/3" />
-          <Route path="/templates/create/4" />
+          <Route path="/templates/create/msg" element={<ViewController/>} />
           <Route path="/*" />
         </Routes>
       ) : (
