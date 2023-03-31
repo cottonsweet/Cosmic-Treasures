@@ -12,7 +12,7 @@ interface Props {
 
 const Input = (props:Props) => {
     return(
-        <input type={props.type} name={props.name} placeholder={props.placeholder} value={props.value} className={`${classes[props.className || ""]}`} />
+        <input type={props.type} name={props.name} placeholder={props.placeholder} value={props.value} className={`${classes[props.className || ""]}`} required />
     )
 }
 
