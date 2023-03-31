@@ -28,9 +28,6 @@ const timeList = [
 const SelectedTime = () => {
 
     const [choiceTime, setChoiceTime] = useState("");
-
-
-
     const handleClick = (e:React.MouseEvent<HTMLButtonElement>) => {
         const value = (e.target as HTMLButtonElement).value
         if (choiceTime === value) return setChoiceTime("")
