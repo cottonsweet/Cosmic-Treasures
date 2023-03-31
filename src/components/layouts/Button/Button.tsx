@@ -11,9 +11,9 @@ interface Props {
 }
 
 
+
+// 각 버튼들 재사용할수있게끔
 const Button = (props:Props) => {
-
-
 
     return(
         <button className={`${classes[props.className || ""]}`} onClick={props.onClick} >{props.title}</button>
