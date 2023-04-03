@@ -79,6 +79,21 @@ const ViewController = () => {
     const [viewPageNumber, setViewPageNumber] = useState<number>(1)
     const [selectedPlanet, setSelectedPlanet] = useState(DUMMY_PLANET[0]);
 
+    const [planetTitle, setPlanetTitle] = useState("");
+    const [plnaetDesc, setPlanetDesc] = useState("")
+
+
+    // 2번 뷰단 행성 제목, 내용 저장함수
+    const handleGetPlanetData = (type:string, text:string) => {
+      if (type === "title") {
+        setPlanetTitle(text)
+      } else if (type === "body") {
+        setPlanetDesc(text)
+      }
+      return
+    }
+
+    // 행성 카드 데이터 저장 함수
     const handleSelectedPlanet = (planet:DummyType) => {
         setSelectedPlanet(planet)
     }
@@ -91,8 +106,8 @@ const ViewController = () => {
 
     const viewList = [
         <ViewOne onNext={handleClickNextPageView} handleSelectedPlanet={handleSelectedPlanet} selectedPlanet={selectedPlanet} DUMMY_PLANET={DUMMY_PLANET}/>,
-        <ViewTwo onNext={handleClickNextPageView} onPrev={handleClickPrevPageView} selectedPlanet={selectedPlanet} />,
-        <ViewThree onNext={handleClickNextPageView} onPrev={handleClickPrevPageView} />,
+        <ViewTwo onNext={handleClickNextPageView} onPrev={handleClickPrevPageView} selectedPlanet={selectedPlanet} handleGetPlanetData={handleGetPlanetData} />,
+        <ViewThree onNext={handleClickNextPageView} onPrev={handleClickPrevPageView} selectedPlanet={selectedPlanet} planetTitle={planetTitle} plnaetDesc={plnaetDesc} />,
         <ViewFour onNext={handleClickNextPageView} onPrev={handleClickPrevPageView} />,
         <ViewFive onNext={handleClickNextPageView} onPrev={handleClickPrevPageView} />,
     ]
