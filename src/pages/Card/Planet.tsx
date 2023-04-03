@@ -6,13 +6,14 @@ import classes from "./Planet.module.sass";
 
 interface Props {
   onClick: (planet: DummyType) => void;
-  DUMMY_PLANET: DummyType[];
+  handleSelectedPlanet:(planet:DummyType) => void
+  DUMMY_PLANET:DummyType[]
 }
 
 const Planet = (props: Props) => {
   const handleClickPlanet = (planet: DummyType) => {
-    console.log(planet);
     props.onClick(planet);
+    props.handleSelectedPlanet(planet)
   };
   return (
     <div className={classes["planet-bg"]}>
