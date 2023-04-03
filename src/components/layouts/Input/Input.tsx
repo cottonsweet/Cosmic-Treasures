@@ -1,4 +1,5 @@
 // CSS
+import React from "react";
 import classes from "./Input.module.sass";
 
 interface Props {
@@ -9,6 +10,7 @@ interface Props {
   className?: string;
   maxLang?: number;
   minLang?: number;
+  onChange?: (e:React.ChangeEvent<HTMLInputElement>) => void
 }
 
 // 인풋 재사용
@@ -22,6 +24,7 @@ const Input = (props: Props) => {
       className={`${classes[props.className || ""]}`}
       maxLength={props.maxLang}
       minLength={props.minLang}
+      onChange={props.onChange}
       required
     />
   );
