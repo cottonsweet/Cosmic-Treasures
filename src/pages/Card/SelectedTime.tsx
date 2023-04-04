@@ -29,7 +29,11 @@ const timeList = [
   },
 ];
 
-const SelectedTime = () => {
+interface Props {
+  addDaysToDate: (time: string) => void;
+}
+
+const SelectedTime = (props: Props) => {
   const [choiceTime, setChoiceTime] = useState("");
 
   //  시간일정 정하는 함수
@@ -37,6 +41,7 @@ const SelectedTime = () => {
     const value = (e.target as HTMLButtonElement).value;
     if (choiceTime === value) return setChoiceTime("");
     setChoiceTime(value);
+    props.addDaysToDate(value);
   };
   return (
     <div className={classes.SelectedTime_item}>

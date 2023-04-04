@@ -11,6 +11,7 @@ import Button from "../../components/layouts/Button/Button";
 interface Props {
   onNext: () => void;
   onPrev: () => void;
+  addDaysToDate: (time: string) => void;
   selectedPlanet: DummyType;
   planetTitle: string;
   plnaetDesc: string;
@@ -29,7 +30,7 @@ const ViewThree = (props: Props) => {
       </div>
 
       <div className={classes["view-three__selected-time"]}>
-        <SelectedTime />
+        <SelectedTime addDaysToDate={props.addDaysToDate} />
       </div>
       <div className={classes["view-three__footer-btn"]}>
         <Button title="다음" onClick={props.onNext} className="view-three_next--btn" />
