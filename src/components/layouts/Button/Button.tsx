@@ -1,5 +1,10 @@
-// CSS
 import React from "react";
+
+
+// Type
+import {TimeProps} from "../../../Type/DataType"
+
+// CSS
 import classes from "./Button.module.sass";
 
 interface Props {
@@ -8,12 +13,6 @@ interface Props {
   onClick?: (e: React.MouseEvent) => void;
   selectedTimList?:TimeProps
   value?:string,
-}
-
-interface TimeProps {
-  id:number,
-  title:string,
-  time:string,
 }
 
 // 각 버튼들 재사용할수있게끔
