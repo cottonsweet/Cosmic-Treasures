@@ -1,6 +1,10 @@
-// CSS
 import React, { useState }  from "react"
+
+// CSS
 import classes from  "./SelectedTime.module.sass"
+
+// Components
+import Button from "../../components/layouts/Button/Button"
 
 const timeList = [
     {
@@ -26,20 +30,23 @@ const timeList = [
 ]
 
 const SelectedTime = () => {
-
     const [choiceTime, setChoiceTime] = useState("");
-    const handleClick = (e:React.MouseEvent<HTMLButtonElement>) => {
+
+    //  시간일정 정하는 함수
+    const handleClickTime = (e:React.MouseEvent) => {
         const value = (e.target as HTMLButtonElement).value
         if (choiceTime === value) return setChoiceTime("")
         setChoiceTime(value)
+        console.log(value)
     }
     return(
         <div className={classes.SelectedTime_item}>
             {timeList.map((timeData) => {
                 const isSelected = timeData.time === choiceTime;
                 const className = `${classes[timeData.time]} ${isSelected ? classes.select : ""}`;
+
                 return(
-                    <button onClick={handleClick} key={timeData.id} value={timeData.time} className={className}>{timeData.title}</button>
+                    <Button onClick={handleClickTime} key={timeData.id} value={timeData.time} className={className} />
                 )
             })}
         </div>

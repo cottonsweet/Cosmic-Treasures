@@ -2,7 +2,7 @@ import { useState } from "react";
 
 
 // Type
-import { DummyType } from "../../pages/Card/PlanetData";
+import { DummyType } from "../../Type/DataType";
 
 // CSS
 import classes from "./ViewOne.module.sass";

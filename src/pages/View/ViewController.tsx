@@ -1,7 +1,7 @@
 import  {useState} from "react"
 
 // Type
-import { DummyType } from "../../pages/Card/PlanetData";
+import { DummyType } from "../../Type/DataType";
 
 // Components
 import ViewOne from "./ViewOne"

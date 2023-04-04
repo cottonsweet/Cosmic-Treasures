@@ -1,5 +1,5 @@
 // Type
-import { DummyType } from "../../../pages/Card/PlanetData";
+import { DummyType } from "../../../Type/DataType";
 
 // CSS
 import classes from "./CapsulModal.module.sass";

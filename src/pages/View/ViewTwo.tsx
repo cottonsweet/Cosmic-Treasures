@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React from "react";
 
 // Type
-import { DummyType } from "../Card/PlanetData";
+import { DummyType } from "../../Type/DataType";
 
 // CSS
 import classes from "./ViewTwo.module.sass"
