@@ -1,42 +1,42 @@
-
-
 // Type
-import { DummyType } from "../Card/PlanetData"
+import { DummyType } from "../../Type/DataType";
 
 // CSS
-import classes from "./ViewThree.module.sass"
-
+import classes from "./ViewThree.module.sass";
 
 // Components
-import SelectedTime from "../Card/SelectedTime"
+import SelectedTime from "../Card/SelectedTime";
+import Button from "../../components/layouts/Button/Button";
 
 interface Props {
-    onNext: () => void
-    onPrev: () => void
-    selectedPlanet:DummyType
-    planetTitle: string,
-    plnaetDesc: string,
+  onNext: () => void;
+  onPrev: () => void;
+  addDaysToDate: (time: string) => void;
+  selectedPlanet: DummyType;
+  planetTitle: string;
+  plnaetDesc: string;
 }
 
-
-const ViewThree = (props:Props) => {
-    return(
-        <div className={classes["view-three"]}>
-            <div className={classes["view-three__header"]}>
-                <div className={classes["view-three__img"]}>
-                    <span className={classes["view-three__img-item"]}>{props.selectedPlanet.img}</span>
-                </div>
-                
-                <div className={classes["view-three-planet__desc"]}>{props.selectedPlanet.desc}</div>
-                <div className={classes["view-three-planet__title"]}>{props.selectedPlanet.title}에서 이 타임캡슐을 언제 받아볼까요 ?</div>
-            </div>
-
-
-            <div className={classes["view-three__footer"]}>
-                <SelectedTime/>
-            </div>
+const ViewThree = (props: Props) => {
+  return (
+    <div className={classes["view-three"]}>
+      <div className={classes["view-three__header"]}>
+        <div className={classes["view-three__img"]}>
+          <span className={classes["view-three__img-item"]}>{props.selectedPlanet.img}</span>
         </div>
-    )
-}
 
-export default ViewThree
+        <div className={classes["view-three-planet__desc"]}>{props.selectedPlanet.desc}</div>
+        <div className={classes["view-three-planet__title"]}>{props.selectedPlanet.title}에서 이 타임캡슐을 언제 받아볼까요 ?</div>
+      </div>
+
+      <div className={classes["view-three__selected-time"]}>
+        <SelectedTime addDaysToDate={props.addDaysToDate} />
+      </div>
+      <div className={classes["view-three__footer-btn"]}>
+        <Button title="다음" onClick={props.onNext} className="view-three_next--btn" />
+      </div>
+    </div>
+  );
+};
+
+export default ViewThree;
