@@ -37,16 +37,14 @@ const SelectedTime = () => {
         const value = (e.target as HTMLButtonElement).value
         if (choiceTime === value) return setChoiceTime("")
         setChoiceTime(value)
-        console.log(value)
     }
     return(
         <div className={classes.SelectedTime_item}>
             {timeList.map((timeData) => {
                 const isSelected = timeData.time === choiceTime;
                 const className = `${classes[timeData.time]} ${isSelected ? classes.select : ""}`;
-
                 return(
-                    <Button onClick={handleClickTime} key={timeData.id} value={timeData.time} className={className} />
+                    <Button onClick={handleClickTime} key={timeData.id} value={timeData.time} className={className} title={timeData.title} />
                 )
             })}
         </div>

@@ -1,7 +1,7 @@
 
 
 // Type
-import { DummyType } from "../Card/PlanetData"
+import { DummyType } from "../../Type/DataType"
 
 // CSS
 import classes from "./ViewThree.module.sass"
