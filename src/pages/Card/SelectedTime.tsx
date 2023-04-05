@@ -31,6 +31,7 @@ const timeList = [
 
 interface Props {
   addDaysToDate: (time: string) => void;
+  getSelectedDate:(time:string) => void
 }
 
 const SelectedTime = (props: Props) => {
@@ -42,6 +43,7 @@ const SelectedTime = (props: Props) => {
     if (choiceTime === value) return setChoiceTime("");
     setChoiceTime(value);
     props.addDaysToDate(value);
+    props.getSelectedDate(value);
   };
   return (
     <div className={classes.SelectedTime_item}>
