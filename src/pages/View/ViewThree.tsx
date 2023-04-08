@@ -16,7 +16,7 @@ interface Props {
   addDaysToDate: (time: string) => void;
   selectedPlanet: DummyType;
   planetTitle: string;
-  plnaetDesc: string;
+  planettDesc: string;
 }
 
 const ViewThree = (props: Props) => {
