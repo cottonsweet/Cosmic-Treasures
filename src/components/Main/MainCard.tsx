@@ -36,15 +36,6 @@ export const MainCard = (props: Props) => {
     return setRemainingDays(result);
   };
 
-  // 날짜가 D-0일때 색상 바꿈
-  const checkDays = (day: string) => {
-    if (Number(day) !== 0) {
-      return <span className={classes["MainCardTitleDay"]}>{`D-${day}`}</span>;
-    } else {
-      return <span className={classes["MainCardTitleDday"]}>{`D-${day}`}</span>;
-    }
-  };
-
   useMemo(() => {
     calculDays(endDate);
   }, [props]);
@@ -64,7 +55,14 @@ export const MainCard = (props: Props) => {
         <span>{Number(remainingDays) !== 0 ? "잠금" : null}</span>
       </div>
       <div className={classes["MainCardTitle"]}>
-        {title} {checkDays(remainingDays)}
+        {title}{" "}
+        <span
+          className={
+            Number(remainingDays) !== 0
+              ? classes["MainCardTitleDay"]
+              : classes["MainCardTitleDday"]
+          }
+        >{`D-${remainingDays}`}</span>
       </div>
       <div className={classes["MainCardPlanet"]}>{planet.name}</div>
     </div>
