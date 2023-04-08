@@ -80,7 +80,7 @@ const ViewController = () => {
   const [daysToAdd, setDaysToAdd] = useState("");
 
   const [planetTitle, setPlanetTitle] = useState("");
-  const [plnaetDesc, setPlanetDesc] = useState("");
+  const [planettDesc, setPlanetDesc] = useState("");
 
   // 2번 뷰단 행성 제목, 내용 저장함수
   const handleGetPlanetData = (type: string, text: string) => {
@@ -116,7 +116,7 @@ const ViewController = () => {
       onPrev={handleClickPrevPageView}
       selectedPlanet={selectedPlanet}
       planetTitle={planetTitle}
-      plnaetDesc={plnaetDesc}
+      planettDesc={planettDesc}
       addDaysToDate={addDaysToDate}
     />,
     <ViewFour
@@ -124,10 +124,10 @@ const ViewController = () => {
       onPrev={handleClickPrevPageView}
       selectedPlanet={selectedPlanet}
       planetTitle={planetTitle}
-      plnaetDesc={plnaetDesc}
+      planettDesc={planettDesc}
       daysToAdd={daysToAdd}
     />,
-    <ViewFive onNext={handleClickNextPageView} onPrev={handleClickPrevPageView} />,
+    <ViewFive selectedPlanet={selectedPlanet} />,
   ];
 
   return viewList[viewPageNumber - 1];
