@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 // Type
 import { DummyType } from "../../Type/DataType";
 
@@ -14,10 +16,23 @@ interface Props {
   addDaysToDate: (time: string) => void;
   selectedPlanet: DummyType;
   planetTitle: string;
-  plnaetDesc: string;
+  planettDesc: string;
 }
 
 const ViewThree = (props: Props) => {
+  const [getSelectedTime, setSelectedTitme] = useState("")
+
+
+  const getSelectedDate = (time:string) => {
+    setSelectedTitme(time)
+  }
+
+  const handleNextPageView = () => {
+    if (!getSelectedTime) return alert("날짜를 선택해주세요 !")
+    props.onNext();
+  }
+
+
   return (
     <div className={classes["view-three"]}>
       <div className={classes["view-three__header"]}>
@@ -30,10 +45,10 @@ const ViewThree = (props: Props) => {
       </div>
 
       <div className={classes["view-three__selected-time"]}>
-        <SelectedTime addDaysToDate={props.addDaysToDate} />
+        <SelectedTime addDaysToDate={props.addDaysToDate} getSelectedDate={getSelectedDate} />
       </div>
       <div className={classes["view-three__footer-btn"]}>
-        <Button title="다음" onClick={props.onNext} className="view-three_next--btn" />
+        <Button title="다음" onClick={handleNextPageView} className="view-three_next--btn" />
       </div>
     </div>
   );
