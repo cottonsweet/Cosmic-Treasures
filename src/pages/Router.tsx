@@ -17,7 +17,7 @@ const Router = () => {
           <Route path="/" element={<Main />} />
           <Route path="/:user/edit" />
           <Route path="/templates/create/msg" element={<ViewController />} />
-          <Route path="/*" />
+          <Route path="/*" element={<Main />}  />
         </Routes>
       ) : (
         <Routes>
