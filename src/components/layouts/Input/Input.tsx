@@ -10,7 +10,7 @@ interface Props {
   className?: string;
   maxLang?: number;
   minLang?: number;
-  onChange?: (e:React.ChangeEvent<HTMLInputElement>) => void
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 // 인풋 재사용

@@ -9,7 +9,7 @@ import SignUp from "./Main/Auth/SignUp";
 
 const Router = () => {
   // 이 state에 백으로 받는 토큰값 전송해야함, 기본 값 false
-  const [logged, setLogged] = useState(true);
+  const [logged, setLogged] = useState(false);
   return (
     <>
       {logged ? (
@@ -17,7 +17,7 @@ const Router = () => {
           <Route path="/" element={<Main />} />
           <Route path="/:user/edit" />
           <Route path="/templates/create/msg" element={<ViewController />} />
-          <Route path="/*" element={<Main />}  />
+          <Route path="/*" element={<Main />} />
         </Routes>
       ) : (
         <Routes>
