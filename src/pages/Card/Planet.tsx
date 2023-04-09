@@ -1,19 +1,19 @@
 // Type
-import { DummyType } from "./PlanetData";
+import { DummyType } from "../../Type/DataType";
 
 // CSS
 import classes from "./Planet.module.sass";
 
 interface Props {
   onClick: (planet: DummyType) => void;
-  handleSelectedPlanet:(planet:DummyType) => void
-  DUMMY_PLANET:DummyType[]
+  handleSelectedPlanet: (planet: DummyType) => void;
+  DUMMY_PLANET: DummyType[];
 }
 
 const Planet = (props: Props) => {
   const handleClickPlanet = (planet: DummyType) => {
     props.onClick(planet);
-    props.handleSelectedPlanet(planet)
+    props.handleSelectedPlanet(planet);
   };
   return (
     <div className={classes["planet-bg"]}>
