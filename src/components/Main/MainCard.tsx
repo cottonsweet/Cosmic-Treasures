@@ -40,6 +40,9 @@ export const MainCard = (props: Props) => {
     calculDays(endDate);
   }, [props]);
 
+  // dday가 지난 카드는 표기 x
+  if (Number(remainingDays) < 0) return;
+
   return (
     <div
       className={
