@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Input from "../../../components/common/Input/Input";
-import AuthWrap from "../../../components/common/Wrap/Auth/AuthWrap";
+import Input from "../../../components/Common/Input/Input";
+import AuthWrap from "../../../components/Common/Wrap/Auth/AuthWrap";
 import classes from "./Auth.module.sass";
-import Button from "../../../components/common/Button/Button";
+import Button from "../../../components/Common/Button/Button";
 import { useNavigate } from "react-router-dom";
 
 // 로그인 화면

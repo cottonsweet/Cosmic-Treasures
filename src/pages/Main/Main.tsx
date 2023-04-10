@@ -1,6 +1,6 @@
 import { MainCard } from "../../components/Main/MainCard";
-import MenuHeader from "../../components/common/Header/MenuHeader";
-import MainWrap from "../../components/common/Wrap/Main/MainWrap";
+import MenuHeader from "../../components/Common/Header/MenuHeader";
+import MainWrap from "../../components/Common/Wrap/Main/MainWrap";
 import classes from "./Main.module.sass";
 
 const dummyData = [

@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import Input from "../../../components/common/Input/Input";
-import AuthWrap from "../../../components/common/Wrap/Auth/AuthWrap";
+import Input from "../../../components/Common/Input/Input";
+import AuthWrap from "../../../components/Common/Wrap/Auth/AuthWrap";
 import classes from "./Auth.module.sass";
 import { useState } from "react";
-import Button from "../../../components/common/Button/Button";
+import Button from "../../../components/Common/Button/Button";
 
 // 회원가입 화면
 const SignUp = () => {

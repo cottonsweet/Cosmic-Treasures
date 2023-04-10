@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import classes from "./SelectedTime.module.sass";
 
 // Components
-import Button from "../../components/common/Button/Button";
+import Button from "../Common/Button/Button";
 
 const timeList = [
   {
