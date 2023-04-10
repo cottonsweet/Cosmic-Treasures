@@ -1,5 +1,5 @@
-import Input from "../../../components/layouts/Input/Input";
-import AuthWrap from "../../../components/layouts/Wrap/Auth/AuthWrap";
+import Input from "../../../components/common/Input/Input";
+import AuthWrap from "../../../components/common/Wrap/Auth/AuthWrap";
 
 // 회원가입 화면
 const SignUp = () => {

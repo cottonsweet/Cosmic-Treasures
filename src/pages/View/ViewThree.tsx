@@ -8,7 +8,7 @@ import classes from "./ViewThree.module.sass";
 
 // Components
 import SelectedTime from "../Card/SelectedTime";
-import Button from "../../components/layouts/Button/Button";
+import Button from "../../components/common/Button/Button";
 
 interface Props {
   onNext: () => void;

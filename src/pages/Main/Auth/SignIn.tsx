@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Input from "../../../components/layouts/Input/Input";
+import Input from "../../../components/common/Input/Input";
 
 // 로그인 화면
 const SignIn = () => {
