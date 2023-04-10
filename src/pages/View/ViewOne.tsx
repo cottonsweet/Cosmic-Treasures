@@ -9,7 +9,7 @@ import classes from "./ViewOne.module.sass";
 
 // Components
 import RocketIcon from "../../components/layouts/Icons/RocketIocn";
-import CapsulModal from "../../components/UI/Modal/CapsulModal";
+import CapsulModal from "../../components/layouts/Modal/CapsulModal";
 import Button from "../../components/layouts/Button/Button";
 
 interface Props {
