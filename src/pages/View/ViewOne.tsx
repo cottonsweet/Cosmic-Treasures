@@ -33,7 +33,9 @@ const ViewOne = (props: Props) => {
       <CapsulModal activityModal={activityModal} onClick={handleClickModal} handleSelectedPlanet={props.handleSelectedPlanet} selectedPlanet={props.selectedPlanet} DUMMY_PLANET={props.DUMMY_PLANET} />
       <div className={classes["view_footer--btn"]}>
         <Button title="다른 행성 고르기" onClick={handleClickModal} className="change_planet" />
-        <Button title="다음" onClick={props.onNext} className="next_btn" />
+        <div>
+          <Button title="다음" onClick={props.onNext} className="next_btn" />
+        </div>
       </div>
     </div>
   );
