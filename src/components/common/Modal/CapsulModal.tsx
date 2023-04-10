@@ -5,7 +5,7 @@ import { DummyType } from "../../../Type/DataType";
 import classes from "./CapsulModal.module.sass";
 
 // Component
-import Planet from "../../../pages/Card/Planet";
+import Planet from "../../Card/Planet";
 
 interface Props {
   activityModal: boolean;

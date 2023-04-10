@@ -7,7 +7,7 @@ import { DummyType } from "../../Type/DataType";
 import classes from "./ViewThree.module.sass";
 
 // Components
-import SelectedTime from "../Card/SelectedTime";
+import SelectedTime from "../../components/Card/SelectedTime";
 import Button from "../../components/common/Button/Button";
 
 interface Props {
