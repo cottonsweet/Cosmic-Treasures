@@ -22,7 +22,6 @@ interface Props {
 const ViewThree = (props: Props) => {
   const [getSelectedTime, setSelectedTitme] = useState("")
 
-
   const getSelectedDate = (time:string) => {
     setSelectedTitme(time)
   }
@@ -32,10 +31,9 @@ const ViewThree = (props: Props) => {
     props.onNext();
   }
 
-
   return (
     <div className={classes["view-three"]}>
-      <div className={classes["view-three__header"]}>
+      <div>
         <div className={classes["view-three__img"]}>
           <span className={classes["view-three__img-item"]}>{props.selectedPlanet.img}</span>
         </div>

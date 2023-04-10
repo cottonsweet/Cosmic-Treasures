@@ -41,7 +41,7 @@ const ViewTwo = (props: Props) => {
 
   return (
     <div className={classes["view-two"]}>
-      <div className={classes["view-two__header"]}>
+      <div>
         <div className={classes["view-two__img"]}>
           <span className={classes["view-two__img-item"]}>{props.selectedPlanet.img}</span>
         </div>

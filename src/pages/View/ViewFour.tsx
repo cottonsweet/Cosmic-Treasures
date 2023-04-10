@@ -66,7 +66,7 @@ const ViewFour = (props: Props) => {
 
   return (
     <div className={classes["view-four"]}>
-      <div className={classes["view-four__header"]}>
+      <div>
         <div className={classes["view-four__img"]}>
           <span className={classes["view-four__img-item"]}>{props.selectedPlanet.img}</span>
         </div>
