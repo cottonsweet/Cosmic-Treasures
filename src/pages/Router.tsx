@@ -9,7 +9,7 @@ import SignUp from "./Main/Auth/SignUp";
 
 const Router = () => {
   // 이 state에 백으로 받는 토큰값 전송해야함, 기본 값 false
-  const [logged, setLogged] = useState(false);
+  const [logged, setLogged] = useState(true);
   return (
     <>
       {logged ? (
