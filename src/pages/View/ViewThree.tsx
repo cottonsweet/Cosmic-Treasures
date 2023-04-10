@@ -35,21 +35,21 @@ const ViewThree = (props: Props) => {
 
   return (
     <div className={classes["view-three"]}>
-      <div className={classes["view-three__header"]}>
-        <div className={classes["view-three__img"]}>
-          <span className={classes["view-three__img-item"]}>{props.selectedPlanet.img}</span>
-        </div>
-
-        <div className={classes["view-three-planet__desc"]}>{props.selectedPlanet.desc}</div>
-        <div className={classes["view-three-planet__title"]}>{props.selectedPlanet.title}에서 이 타임캡슐을 언제 받아볼까요 ?</div>
+      <div className={classes["view-three__img"]}>
+        <span className={classes["view-three__img-item"]}>{props.selectedPlanet.img}</span>
       </div>
+
+      <div className={classes["view-three-planet__desc"]}>{props.selectedPlanet.desc}</div>
+      <div className={classes["view-three-planet__title"]}>{props.selectedPlanet.title}에서 이 타임캡슐을 언제 받아볼까요 ?</div>
 
       <div className={classes["view-three__selected-time"]}>
         <SelectedTime addDaysToDate={props.addDaysToDate} getSelectedDate={getSelectedDate} />
       </div>
+
       <div className={classes["view-three__footer-btn"]}>
         <Button title="다음" onClick={handleNextPageView} className="view-three_next--btn" />
       </div>
+      
     </div>
   );
 };

@@ -41,14 +41,14 @@ const ViewTwo = (props: Props) => {
 
   return (
     <div className={classes["view-two"]}>
-      <div className={classes["view-two__header"]}>
+
         <div className={classes["view-two__img"]}>
           <span className={classes["view-two__img-item"]}>{props.selectedPlanet.img}</span>
         </div>
 
         <div className={classes["view-two-planet__desc"]}>{props.selectedPlanet.desc}</div>
         <div className={classes["view-two-planet__title"]}>{props.selectedPlanet.title}에 보낼 타임 캡슐 내용을 적어주세요.</div>
-      </div>
+
 
       <div className={classes["view-two-form"]}>
         <div>

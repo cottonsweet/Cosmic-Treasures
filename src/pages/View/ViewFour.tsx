@@ -66,13 +66,12 @@ const ViewFour = (props: Props) => {
 
   return (
     <div className={classes["view-four"]}>
-      <div className={classes["view-four__header"]}>
-        <div className={classes["view-four__img"]}>
-          <span className={classes["view-four__img-item"]}>{props.selectedPlanet.img}</span>
-        </div>
-        <div className={classes["view-four-planet__desc"]}>{props.selectedPlanet.desc}</div>
-        <div className={classes["view-four-planet__title"]}>{props.selectedPlanet.title}에 보낼 타임캡슐 정보를 확인 해주세요.</div>
+      <div className={classes["view-four__img"]}>
+        <span className={classes["view-four__img-item"]}>{props.selectedPlanet.img}</span>
       </div>
+      
+      <div className={classes["view-four-planet__desc"]}>{props.selectedPlanet.desc}</div>
+      <div className={classes["view-four-planet__title"]}>{props.selectedPlanet.title}에 보낼 타임캡슐 정보를 확인 해주세요.</div>
 
       <div className={classes["view-four-msg"]}>
         <div className={classes["view-four-msg__info--title"]}>
