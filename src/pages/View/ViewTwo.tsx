@@ -7,8 +7,8 @@ import { DummyType } from "../../Type/DataType";
 import classes from "./ViewTwo.module.sass";
 
 // Components
-import Input from "../../components/layouts/Input/Input";
-import Button from "../../components/layouts/Button/Button";
+import Input from "../../components/common/Input/Input";
+import Button from "../../components/common/Button/Button";
 
 interface Props {
   onNext: () => void;

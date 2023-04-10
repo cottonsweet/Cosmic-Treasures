@@ -7,7 +7,7 @@ import { DummyType } from "../../Type/DataType";
 import classes from "./ViewFour.module.sass";
 
 // Components
-import Button from "../../components/layouts/Button/Button";
+import Button from "../../components/common/Button/Button";
 
 interface Props {
   onNext: () => void;

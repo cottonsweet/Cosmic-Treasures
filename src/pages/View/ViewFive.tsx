@@ -7,8 +7,8 @@ import { DummyType } from "../../Type/DataType"
 import classes from "./ViewFive.module.sass"
 
 // Components
-import Button from "../../components/layouts/Button/Button"
-import RocketIcon from "../../components/layouts/Icons/RocketIocn"
+import Button from "../../components/common/Button/Button"
+import RocketIcon from "../../components/common/Icons/RocketIocn"
 
 interface Props {
     selectedPlanet: DummyType

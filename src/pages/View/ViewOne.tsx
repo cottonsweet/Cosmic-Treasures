@@ -8,9 +8,9 @@ import { DummyType } from "../../Type/DataType";
 import classes from "./ViewOne.module.sass";
 
 // Components
-import RocketIcon from "../../components/layouts/Icons/RocketIocn";
-import CapsulModal from "../../components/layouts/Modal/CapsulModal";
-import Button from "../../components/layouts/Button/Button";
+import RocketIcon from "../../components/common/Icons/RocketIocn";
+import CapsulModal from "../../components/common/Modal/CapsulModal";
+import Button from "../../components/common/Button/Button";
 
 interface Props {
   onNext: () => void;
