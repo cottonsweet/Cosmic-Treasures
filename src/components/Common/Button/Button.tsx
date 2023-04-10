@@ -1,8 +1,5 @@
 import React from "react";
 
-// Type
-import { TimeProps } from "../../../Type/DataType";
-
 // CSS
 import classes from "./Button.module.sass";
 
