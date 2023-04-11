@@ -61,7 +61,7 @@ const ViewTwo = (props: Props) => {
       </div>
 
       <div className={classes["view-two__footer"]}>
-        <Button title="다음" className="view-two_next--btn" onClick={handleNextViewBtn} />
+        <Button title="다음" className="next_btn" onClick={handleNextViewBtn} />
       </div>
     </div>
   );

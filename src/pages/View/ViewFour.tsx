@@ -90,7 +90,7 @@ const ViewFour = (props: Props) => {
       </div>
 
       <div className={classes["view-four__footer-btn"]}>
-        <Button title={`${props.selectedPlanet.title}에 타임캡슐 보내기`} onClick={handlePostCapSulMessage} className="view-four_next--btn" />
+        <Button title={`${props.selectedPlanet.title}에 타임캡슐 보내기`} onClick={handlePostCapSulMessage} className="next_btn" />
       </div>
     </div>
   );

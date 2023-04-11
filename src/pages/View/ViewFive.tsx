@@ -30,7 +30,7 @@ const ViewFive = (props:Props) => {
                 <div>{props.selectedPlanet.desc}행성에</div>
                 <div>안전하게 보냈어요</div>
             </div>
-            <Button title="홈으로" onClick={handleGoHome} className="view-five__nextHome" />
+            <Button title="홈으로" onClick={handleGoHome} className="next_btn" />
         </div>
     )
 }

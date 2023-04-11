@@ -47,7 +47,7 @@ const ViewThree = (props: Props) => {
       </div>
 
       <div className={classes["view-three__footer-btn"]}>
-        <Button title="다음" onClick={handleNextPageView} className="view-three_next--btn" />
+        <Button title="다음" onClick={handleNextPageView} className="next_btn" />
       </div>
       
     </div>
