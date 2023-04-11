@@ -7,6 +7,7 @@ interface Props {
   name?: string;
   placeholder?: string;
   value?: string;
+  id?:string
   className?: string;
   maxLang?: number;
   minLang?: number;
@@ -21,7 +22,8 @@ const Input = (props: Props) => {
       name={props.name}
       placeholder={props.placeholder}
       value={props.value}
-      className={`${classes[props.className || ""]}`}
+      id={props.id}
+      className={`${classes[props.className || ""] || "input"}`}
       maxLength={props.maxLang}
       minLength={props.minLang}
       onChange={props.onChange}
