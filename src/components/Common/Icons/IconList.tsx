@@ -1,5 +1,5 @@
 import { IoIosArrowBack } from "react-icons/io";
-import { RiArrowGoBackLine } from "react-icons/ri";
+import {ImSpinner11} from "react-icons/im"
 
 
 // 상단 메뉴 뒤로가기 버튼 아이콘
@@ -15,7 +15,7 @@ export const BackIcon = () => {
 export const ChangeIcon = () => {
   return (
     <span>
-      <RiArrowGoBackLine />
+      <ImSpinner11 />
     </span>
   );
 };
