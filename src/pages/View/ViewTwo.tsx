@@ -11,8 +11,7 @@ import Input from "../../components/Common/Input/Input";
 import Button from "../../components/Common/Button/Button";
 
 interface Props {
-  onNext: () => void;
-  onPrev: () => void;
+  onChangePathLocation: (location:string) => void;
   handleGetPlanetData: (type: string, text: string) => void;
   selectedPlanet: DummyType;
 }
@@ -36,8 +35,10 @@ const ViewTwo = (props: Props) => {
   const handleNextViewBtn = () => {
     if (messageTitle.trim().length < 5) return alert("제목은 5글자 이상으로 해주세요");
     if (messageDesc.trim().length < 10) return alert("본문 내용은 10글자 이상 기입 해주셔야 합니다.");
-    props.onNext();
+    props.onChangePathLocation("3")
   };
+
+
 
   return (
     <div className={classes["view-two"]}>

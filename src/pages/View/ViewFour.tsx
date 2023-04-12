@@ -10,8 +10,7 @@ import classes from "./ViewFour.module.sass";
 import Button from "../../components/Common/Button/Button";
 
 interface Props {
-  onNext: () => void;
-  onPrev: () => void;
+  onChangePathLocation: (location:string) => void;
   selectedPlanet: DummyType;
   planetTitle: string;
   planettDesc: string;
@@ -23,7 +22,7 @@ const ViewFour = (props: Props) => {
 
   // 캡슐 서버로 전송 함수
   const handlePostCapSulMessage = () => {
-    props.onNext()
+    props.onChangePathLocation("5")
   };
 
   useEffect(() => {

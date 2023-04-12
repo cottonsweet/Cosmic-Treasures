@@ -13,7 +13,7 @@ import CapsulModal from "../../components/Common/Modal/CapsulModal";
 import Button from "../../components/Common/Button/Button";
 
 interface Props {
-  onNext: () => void;
+  onChangePathLocation: (location:string) => void;
   selectedPlanet:DummyType
   DUMMY_PLANET:DummyType[]
   handleSelectedPlanet:(plnaet:DummyType) => void;
@@ -25,6 +25,9 @@ const ViewOne = (props: Props) => {
   // 행성 리스트 모달 출력 여부
   const handleClickModal = () => setActivityModal((prev) => !prev);
 
+  // 다음 페이지
+  const onNextPage = () => props.onChangePathLocation("2")
+
   return (
     <div className={classes["view-one"]}>
       <RocketIcon />
@@ -34,7 +37,7 @@ const ViewOne = (props: Props) => {
       <div className={classes["view_footer--btn"]}>
         <Button title="다른 행성 고르기" onClick={handleClickModal} className="change_planet" />
         <div>
-          <Button title="다음" onClick={props.onNext} className="next_btn" />
+          <Button title="다음" onClick={onNextPage} className="next_btn" />
         </div>
       </div>
     </div>

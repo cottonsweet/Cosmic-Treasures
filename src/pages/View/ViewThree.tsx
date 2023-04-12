@@ -11,8 +11,7 @@ import SelectedTime from "../../components/Card/SelectedTime";
 import Button from "../../components/Common/Button/Button";
 
 interface Props {
-  onNext: () => void;
-  onPrev: () => void;
+  onChangePathLocation: (location:string) => void;
   addDaysToDate: (time: string) => void;
   selectedPlanet: DummyType;
   planetTitle: string;
@@ -29,7 +28,7 @@ const ViewThree = (props: Props) => {
 
   const handleNextPageView = () => {
     if (!getSelectedTime) return alert("날짜를 선택해주세요 !")
-    props.onNext();
+    props.onChangePathLocation("4")
   }
 
 
