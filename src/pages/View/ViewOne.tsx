@@ -8,7 +8,7 @@ import { DummyType } from "../../Type/DataType";
 import classes from "./ViewOne.module.sass";
 
 // Components
-import RocketIcon from "../../components/Common/Icons/RocketIocn";
+import {RocketIcon} from "../../components/Common/Icons/IconList";
 import CapsulModal from "../../components/Common/Modal/CapsulModal";
 import Button from "../../components/Common/Button/Button";
 
