@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import classes from "./SelectedTime.module.sass";
 
 // Components
-import Button from "../Common/Button/Button";
+import Input from "../Common/Input/Input"
 
 const timeList = [
   {
@@ -38,12 +38,19 @@ const SelectedTime = (props: Props) => {
   const [choiceTime, setChoiceTime] = useState("");
 
   //  시간일정 정하는 함수
-  const handleClickTime = (e: React.MouseEvent) => {
-    const value = (e.target as HTMLButtonElement).value;
-    if (choiceTime === value) return setChoiceTime("");
-    setChoiceTime(value);
-    props.addDaysToDate(value);
-    props.getSelectedDate(value);
+  const handleClickTime = (e: React.MouseEvent<HTMLSpanElement>) => {
+    const title = e.currentTarget.innerText;
+    const timeData = timeList.find((time) => time.title === title);
+  
+    if(choiceTime === timeData?.time) return setChoiceTime("")
+
+    if (timeData) {
+      const selectedTime = timeData.time;
+      setChoiceTime(selectedTime);
+      props.getSelectedDate(selectedTime);
+      props.addDaysToDate(selectedTime);
+      return;
+    }
   };
   return (
     <div className={classes.SelectedTime_item}>
@@ -52,7 +59,9 @@ const SelectedTime = (props: Props) => {
         const className = `${classes[timeData.time]} ${isSelected ? classes.select : ""}`;
 
         return (
-          <Button onClick={handleClickTime} key={timeData.id} value={timeData.time} className={className} title={timeData.title} isSelected={isSelected} />
+          <div key={timeData.id}>
+            <Input type="radio" value={timeData.time} name="time" className="selected_input" /><label  onClick={handleClickTime} className={className}>{timeData.title}</label>
+          </div>
         );
       })}
     </div>
