@@ -8,7 +8,7 @@ import { DummyType } from "../../Type/DataType";
 import classes from "./ViewOne.module.sass";
 
 // Components
-import {RocketIcon} from "../../components/Common/Icons/IconList";
+import {RocketIcon, ChangeIcon} from "../../components/Common/Icons/IconList";
 import CapsulModal from "../../components/Common/Modal/CapsulModal";
 import Button from "../../components/Common/Button/Button";
 
@@ -35,6 +35,9 @@ const ViewOne = (props: Props) => {
       <div className={classes["view-one__desc"]}>별을 선택해주세요</div>
       <CapsulModal activityModal={activityModal} onClick={handleClickModal} handleSelectedPlanet={props.handleSelectedPlanet} selectedPlanet={props.selectedPlanet} DUMMY_PLANET={props.DUMMY_PLANET} />
       <div className={classes["view_footer--btn"]}>
+        <span className={classes["planet-change__btn"]}>
+          <ChangeIcon/>
+        </span>
         <Button title="다른 행성 고르기" onClick={handleClickModal} className="change_planet" />
         <div>
           <Button title="다음" onClick={onNextPage} className="next_btn" />
