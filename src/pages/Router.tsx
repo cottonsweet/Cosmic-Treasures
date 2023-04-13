@@ -82,7 +82,7 @@ const DUMMY_PLANET: DummyType[] = [
 
 const Router = () => {
   // 이 state에 백으로 받는 토큰값 전송해야함, 기본 값 false
-  const [logged, setLogged] = useState(true);
+  const [logged, setLogged] = useState(false);
 
   const [selectedPlanet, setSelectedPlanet] = useState(DUMMY_PLANET[0]);
   const [daysToAdd, setDaysToAdd] = useState("");
