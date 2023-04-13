@@ -15,6 +15,7 @@ import ViewFive from "./View/ViewFive";
 import Main from "./Main/Main";
 import SignIn from "./Main/Auth/SignIn";
 import SignUp from "./Main/Auth/SignUp";
+import ChangePassword from "./Profile/Edit/ChangePassword"
 
 // 더미데이터
 const DUMMY_PLANET: DummyType[] = [
@@ -120,18 +121,12 @@ const Router = () => {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/:user/edit" />
+          <Route path="/:user/edit/password" element={<ChangePassword/>} />
+          <Route path="/:user/edit/username" />
           <Route path="/templates/create/msg/1" element={<ViewOne onChangePathLocation={handleClickChangePath} handleSelectedPlanet={handleSelectedPlanet} selectedPlanet={selectedPlanet} DUMMY_PLANET={DUMMY_PLANET} />} />
           <Route path="/templates/create/msg/2" element={<ViewTwo onChangePathLocation={handleClickChangePath} selectedPlanet={selectedPlanet} handleGetPlanetData={handleGetPlanetData} />} />
-          <Route path="/templates/create/msg/3" element={<ViewThree onChangePathLocation={handleClickChangePath}
-            selectedPlanet={selectedPlanet}
-            planetTitle={planetTitle}
-            planettDesc={planettDesc}
-            addDaysToDate={addDaysToDate} />} />
-          <Route path="/templates/create/msg/4" element={<ViewFour onChangePathLocation={handleClickChangePath}
-            selectedPlanet={selectedPlanet}
-            planetTitle={planetTitle}
-            planettDesc={planettDesc}
-            daysToAdd={daysToAdd} />} />
+          <Route path="/templates/create/msg/3" element={<ViewThree onChangePathLocation={handleClickChangePath} selectedPlanet={selectedPlanet} planetTitle={planetTitle} planettDesc={planettDesc} addDaysToDate={addDaysToDate} />} />
+          <Route path="/templates/create/msg/4" element={<ViewFour onChangePathLocation={handleClickChangePath} selectedPlanet={selectedPlanet} planetTitle={planetTitle} planettDesc={planettDesc} daysToAdd={daysToAdd} />} />
           <Route path="/templates/create/msg/5" element={<ViewFive selectedPlanet={selectedPlanet} />} />
           <Route path="/*" element={<Main />} />
         </Routes>
