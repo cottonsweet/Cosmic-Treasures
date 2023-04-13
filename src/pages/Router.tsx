@@ -4,7 +4,6 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 // Type
 import { DummyType } from "../Type/DataType";
 
-
 // Components
 import ViewOne from "./View/ViewOne";
 import ViewTwo from "./View/ViewTwo";
@@ -15,7 +14,7 @@ import ViewFive from "./View/ViewFive";
 import Main from "./Main/Main";
 import SignIn from "./Main/Auth/SignIn";
 import SignUp from "./Main/Auth/SignUp";
-import ChangePassword from "./Profile/Edit/ChangePassword"
+import ChangePassword from "./Profile/Edit/ChangePassword";
 
 // 더미데이터
 const DUMMY_PLANET: DummyType[] = [
@@ -83,14 +82,14 @@ const DUMMY_PLANET: DummyType[] = [
 
 const Router = () => {
   // 이 state에 백으로 받는 토큰값 전송해야함, 기본 값 false
-  const [logged, setLogged] = useState(true);
+  const [logged, setLogged] = useState(false);
 
   const [selectedPlanet, setSelectedPlanet] = useState(DUMMY_PLANET[0]);
   const [daysToAdd, setDaysToAdd] = useState("");
   const [planetTitle, setPlanetTitle] = useState("");
   const [planettDesc, setPlanetDesc] = useState("");
 
-  const path = useNavigate()
+  const path = useNavigate();
 
   // 2번 뷰단 행성 제목, 내용 저장함수
   const handleGetPlanetData = (type: string, text: string) => {
@@ -113,7 +112,8 @@ const Router = () => {
   };
 
   // 다음 경로 및 이전 경로 변경
-  const handleClickChangePath = (location:string) => path("/templates/create/msg/" + location);
+  const handleClickChangePath = (location: string) =>
+    path("/templates/create/msg/" + location);
 
   return (
     <>
@@ -121,13 +121,57 @@ const Router = () => {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/:user/edit" />
-          <Route path="/:user/edit/password" element={<ChangePassword/>} />
+          <Route path="/:user/edit/password" element={<ChangePassword />} />
           <Route path="/:user/edit/username" />
-          <Route path="/templates/create/msg/1" element={<ViewOne onChangePathLocation={handleClickChangePath} handleSelectedPlanet={handleSelectedPlanet} selectedPlanet={selectedPlanet} DUMMY_PLANET={DUMMY_PLANET} />} />
-          <Route path="/templates/create/msg/2" element={<ViewTwo onChangePathLocation={handleClickChangePath} selectedPlanet={selectedPlanet} handleGetPlanetData={handleGetPlanetData} />} />
-          <Route path="/templates/create/msg/3" element={<ViewThree onChangePathLocation={handleClickChangePath} selectedPlanet={selectedPlanet} planetTitle={planetTitle} planettDesc={planettDesc} addDaysToDate={addDaysToDate} />} />
-          <Route path="/templates/create/msg/4" element={<ViewFour onChangePathLocation={handleClickChangePath} selectedPlanet={selectedPlanet} planetTitle={planetTitle} planettDesc={planettDesc} daysToAdd={daysToAdd} />} />
-          <Route path="/templates/create/msg/5" element={<ViewFive selectedPlanet={selectedPlanet} />} />
+          <Route
+            path="/templates/create/msg/1"
+            element={
+              <ViewOne
+                onChangePathLocation={handleClickChangePath}
+                handleSelectedPlanet={handleSelectedPlanet}
+                selectedPlanet={selectedPlanet}
+                DUMMY_PLANET={DUMMY_PLANET}
+              />
+            }
+          />
+          <Route
+            path="/templates/create/msg/2"
+            element={
+              <ViewTwo
+                onChangePathLocation={handleClickChangePath}
+                selectedPlanet={selectedPlanet}
+                handleGetPlanetData={handleGetPlanetData}
+              />
+            }
+          />
+          <Route
+            path="/templates/create/msg/3"
+            element={
+              <ViewThree
+                onChangePathLocation={handleClickChangePath}
+                selectedPlanet={selectedPlanet}
+                planetTitle={planetTitle}
+                planettDesc={planettDesc}
+                addDaysToDate={addDaysToDate}
+              />
+            }
+          />
+          <Route
+            path="/templates/create/msg/4"
+            element={
+              <ViewFour
+                onChangePathLocation={handleClickChangePath}
+                selectedPlanet={selectedPlanet}
+                planetTitle={planetTitle}
+                planettDesc={planettDesc}
+                daysToAdd={daysToAdd}
+              />
+            }
+          />
+          <Route
+            path="/templates/create/msg/5"
+            element={<ViewFive selectedPlanet={selectedPlanet} />}
+          />
           <Route path="/*" element={<Main />} />
         </Routes>
       ) : (
