@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // Type
 import { DummyType } from "../../Type/DataType";
@@ -19,6 +19,11 @@ interface Props {
 const ViewTwo = (props: Props) => {
   const [messageTitle, setMessageTitle] = useState("");
   const [messageDesc, setMessageDesc] = useState("");
+  const [messageOver, setMessageOver] = useState(false);
+
+  useEffect(() => {
+    setMessageOver(messageDesc.length >= 300);
+  }, [messageDesc])
 
   // 제목 함수
   const handleChangeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -57,7 +62,8 @@ const ViewTwo = (props: Props) => {
         </div>
 
         <div>
-          <textarea className={classes["view-two__textarea"]} onChange={handleChangeDesc} />
+          <textarea className={classes["view-two__textarea"]} onChange={handleChangeDesc} placeholder="내용" />
+          <div className={classes["view-two__textarea-length"]}><span className={messageOver ? classes["messageDesc_over"] : ""}>{messageDesc.length}</span> / 300</div>
         </div>
       </div>
 
