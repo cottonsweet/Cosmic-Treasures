@@ -1,0 +1,58 @@
+### add new member
+POST http://localhost:8080/auth/signup
+Content-Type: application/json
+
+{
+  "loginId": "rlafls9596",
+  "password" : "1234",
+  "nickname" : "hyelin"
+}
+
+
+### LogIn
+POST http://localhost:8080/auth/signin
+Content-Type: application/json
+
+{
+  "loginId": "rlafls9596",
+  "password" : "1234"
+}
+
+### Write Capsule
+POST http://localhost:8080/capsule
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJybGFmbHM5NTk2Iiwicm9sZXMiOlsiUk9MRV9OT1JNQUwiXSwiaWF0IjoxNjgzNzAyMzE0LCJleHAiOjE2ODM3MDU5MTR9.tjgGf5gHlNWoLePxoKZtuBBTKdD9ynuF_TvlL8t08FZ-40MaLS1iihgt1k1PIMCSPcXBdxdlNqT6nER308tRyA
+
+{
+  "title" : "여기에 제목2",
+  "message" : "여기에 내용 여기에 내용2",
+  "releasedAt" : "2023-10-07T12:23:34"
+}
+
+### GET Capsule List
+GET http://localhost:8080/capsule/my?page=1
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJybGFmbHM5NTk2Iiwicm9sZXMiOlsiUk9MRV9OT1JNQUwiXSwiaWF0IjoxNjgzNzAyMzE0LCJleHAiOjE2ODM3MDU5MTR9.tjgGf5gHlNWoLePxoKZtuBBTKdD9ynuF_TvlL8t08FZ-40MaLS1iihgt1k1PIMCSPcXBdxdlNqT6nER308tRyA
+
+### GET Capsule One
+GET http://localhost:8080/capsule/12
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJybGFmbHM5NTk2Iiwicm9sZXMiOlsiUk9MRV9OT1JNQUwiXSwiaWF0IjoxNjgzNzAyMzE0LCJleHAiOjE2ODM3MDU5MTR9.tjgGf5gHlNWoLePxoKZtuBBTKdD9ynuF_TvlL8t08FZ-40MaLS1iihgt1k1PIMCSPcXBdxdlNqT6nER308tRyA
+
+### PUT update message
+PUT http://localhost:8080/capsule/modify/12
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJybGFmbHM5NTk2Iiwicm9sZXMiOlsiUk9MRV9OT1JNQUwiXSwiaWF0IjoxNjgzNzAyMzE0LCJleHAiOjE2ODM3MDU5MTR9.tjgGf5gHlNWoLePxoKZtuBBTKdD9ynuF_TvlL8t08FZ-40MaLS1iihgt1k1PIMCSPcXBdxdlNqT6nER308tRyA
+
+{
+  "message": "바뀐 내용",
+  "title" : "바뀐 제목",
+  "releasedAt" : "2023-05-09T12:23:34"
+}
+
+### OPEN Message
+PUT http://localhost:8080/capsule/open/13
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJybGFmbHM5NTk2Iiwicm9sZXMiOlsiUk9MRV9OT1JNQUwiXSwiaWF0IjoxNjgzNzAyMzE0LCJleHAiOjE2ODM3MDU5MTR9.tjgGf5gHlNWoLePxoKZtuBBTKdD9ynuF_TvlL8t08FZ-40MaLS1iihgt1k1PIMCSPcXBdxdlNqT6nER308tRyA
+
+### Delete Message
+DELETE http://localhost:8080/capsule/12
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJybGFmbHM5NTk2Iiwicm9sZXMiOlsiUk9MRV9OT1JNQUwiXSwiaWF0IjoxNjgzNzAyMzE0LCJleHAiOjE2ODM3MDU5MTR9.tjgGf5gHlNWoLePxoKZtuBBTKdD9ynuF_TvlL8t08FZ-40MaLS1iihgt1k1PIMCSPcXBdxdlNqT6nER308tRyA
+
