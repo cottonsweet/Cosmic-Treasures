@@ -6,6 +6,12 @@ import cosmic.treasures.dto.capsule.DeleteCapsule;
 import cosmic.treasures.dto.capsule.UpdateCapsule;
 import cosmic.treasures.entity.CapsuleEntity;
 import cosmic.treasures.entity.MemberEntity;
+import cosmic.treasures.exception.impl.BeforeReleaseException;
+import cosmic.treasures.exception.impl.ForbiddenException;
+import cosmic.treasures.exception.impl.GoneContentException;
+import cosmic.treasures.exception.impl.NoContentException;
+import cosmic.treasures.exception.impl.NotFoundUserException;
+import cosmic.treasures.exception.impl.UnAuthorizedUserException;
 import cosmic.treasures.repository.CapsuleRepository;
 import cosmic.treasures.repository.MemberRepository;
 import java.time.LocalDateTime;
@@ -28,7 +34,7 @@ public class CapsuleService {
         // TO-DO Query 작업하기
 
         var member = memberRepository.findByLoginId(loginId)
-            .orElseThrow(() -> new RuntimeException("NO_USER"));
+            .orElseThrow(NotFoundUserException::new);
 
         var capsules = capsuleRepository.findAllByMemberIdAndDeletedAtIsNull(member);
         return capsules.stream().map(CapsuleInfo::from).collect(Collectors.toList());
@@ -36,12 +42,13 @@ public class CapsuleService {
 
     public CapsuleInfo getCapsuleInfo(Long capsuleId, String loginId) {
         var member = memberRepository.findByLoginId(loginId)
-                .orElseThrow(() -> new RuntimeException("NO_USER"));
+                .orElseThrow(NotFoundUserException::new);
+
         var capsule = capsuleRepository.findByIdAndDeletedAtIsNull(capsuleId)
-                .orElseThrow(() -> new RuntimeException("No_Content"));
+                .orElseThrow(NoContentException::new);
 
         if (!capsule.getMemberId().getId().equals(member.getId())) {
-            throw new RuntimeException("FORBIDDEN");
+            throw new ForbiddenException();
         }
 
         return CapsuleInfo.from(capsule);
@@ -50,7 +57,7 @@ public class CapsuleService {
     @Transactional
     public CreateCapsule.Response createCapsule(CreateCapsule.Request capsule, String loginId) {
         var member = memberRepository.findByLoginId(loginId)
-            .orElseThrow(() -> new RuntimeException("NO_USER"));
+            .orElseThrow(NotFoundUserException::new);
 
         var result = capsuleRepository.save(capsule.toEntity(member));
         return CreateCapsule.Response.from(result);
@@ -63,7 +70,7 @@ public class CapsuleService {
 
         if (capsule.getReleasedAt().isAfter(now)
                 && !capsule.getReleasedAt().isEqual(now)) {
-            throw new RuntimeException("BEFORE_RELEASED_DAY");
+            throw new BeforeReleaseException();
         }
         capsule.setOpenedAt(LocalDateTime.now());
 
@@ -109,14 +116,14 @@ public class CapsuleService {
 
         log.info(String.format("%s find %d", loginId, capsuleId));
         var capsule = capsuleRepository.findById(capsuleId)
-            .orElseThrow(() -> new RuntimeException("NO_CONTENT"));
+            .orElseThrow(NoContentException::new);
 
         if (!capsule.getMemberId().getId().equals(memberId)) {
-            throw new RuntimeException("FORBIDDEN");
+            throw new ForbiddenException();
         }
 
         if (!(capsule.getDeletedAt() == null)) {
-            throw new RuntimeException("NO_CONTENT");
+            throw new NoContentException();
         }
 
         return capsule;
@@ -128,14 +135,14 @@ public class CapsuleService {
         Long memberId = this.getMemberIdByLoginId(loginId);
 
         var capsule = capsuleRepository.findById(capsuleId)
-            .orElseThrow( () -> new RuntimeException("NO_CONTENT") );
+            .orElseThrow(NoContentException::new);
 
         if (capsule.getDeletedAt() != null) {
-            throw new RuntimeException("ALREADY_DELETED");
+            throw new GoneContentException();
         }
 
         if (!capsule.getMemberId().getId().equals(memberId)) {
-            throw new RuntimeException("FORBIDDEN");
+            throw new UnAuthorizedUserException();
         }
         capsule.setDeletedAt(LocalDateTime.now());
 

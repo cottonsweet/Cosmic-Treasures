@@ -26,7 +26,7 @@ import javax.validation.constraints.Min;
 @RequestMapping("/capsule")
 public class CapsuleController {
     private final TokenProvider tokenProvider;
-    private final CapsuleService capsuleService;
+    private final CapsuleService  capsuleService;
 
     public static final String TOKEN_PREFIX = "Bearer ";
     @GetMapping("/my")
@@ -48,6 +48,7 @@ public class CapsuleController {
     ) {
         String loginId = tokenProvider.getLoginId(token.substring(TOKEN_PREFIX.length()));
         var result = capsuleService.getCapsuleInfo(capsuleId,loginId);
+
         return ResponseEntity.ok(result);
     }
 
