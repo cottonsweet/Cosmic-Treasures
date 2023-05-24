@@ -1,6 +1,7 @@
 package cosmic.treasures.dto.auth;
 
 import cosmic.treasures.entity.MemberEntity;
+import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
 import javax.validation.constraints.NotBlank;
@@ -14,10 +15,14 @@ import lombok.Setter;
 public class SignUp {
     @Data
     public static class Request {
+        
+        @ApiModelProperty(name = "loginId", example = "로그인 ID", required = true)
         @NotBlank
         private String loginId;
+        @ApiModelProperty(name = "password", example = "비밀 번호", required = true)
         @NotBlank
         private String password;
+        @ApiModelProperty(name = "nickname", example = "닉네임", required = true)
         @NotBlank
         private String nickname;
 

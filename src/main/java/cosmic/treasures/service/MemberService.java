@@ -7,6 +7,7 @@ import cosmic.treasures.exception.impl.AlreadyExistUserException;
 import cosmic.treasures.exception.impl.NotFoundUserException;
 import cosmic.treasures.exception.impl.PasswordMissMatchException;
 import cosmic.treasures.repository.MemberRepository;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -28,6 +29,10 @@ public class MemberService implements UserDetailsService {
             .orElseThrow(() -> new UsernameNotFoundException("couldn't find user -> " + loginId));
     }
 
+    public boolean userExists(String loginId) {
+        Optional<MemberEntity> member = this.memberRepository.findByLoginId(loginId);
+        return member.isPresent();
+    }
     public SignUp.Response register(SignUp.Request member) {
         boolean exists = this.memberRepository.existsByLoginId(member.getLoginId());
         if (exists) {
